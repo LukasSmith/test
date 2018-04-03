@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pl" xml:lang="pl">
+    <head>
+        <title><?php echo $this->system['title']; ?></title>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <link rel="shortcut icon" href="/public/images/icons/003.ico" />
+        <link rel="stylesheet" type="text/css" href="/public/style/style.css" />
+        <script src="/public/scripts/jquery.js" type="text/javascript"></script>
+        <script src="/public/scripts/scripts.js" type="text/javascript"></script>
+        <script src="/public/scripts/swfobject.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="header-container">
+                <div class="logo"><a href="<?php echo $this->url(array('controller' => 'index', 'action' => 'index',), null, true)?>"><img src="/public/images/other/001.png" alt="camslay" /></a></div>
+                <?php if($this->system['loginStatus']) : ?>
+                    <div class="navigation-container">
+                        <ul>
+                            <li><b>Credits: <?php echo $this->system['credits']['balance']; ?></b></li>
+                            <li><a href="<?php echo $this->url(array('controller' => 'account', 'action' => 'profile'), null, true); ?>">My account</a></li>
+                            <li><a href="<?php echo $this->url(array('controller' => 'transmission', 'action' => 'index'), null, true); ?>">Start transmission</a></li>
+                            <li><a href="<?php echo $this->url(array('controller' => 'authentication', 'action' => 'logout'), null, true); ?>">Logout</a></li>
+                        </ul>
+                    </div>
+                <?php else : ?>
+                    <div class="login-container">
+                        <form action="<?php echo $this->url(array('controller' => 'authentication', 'action' => 'login'), null, true); ?>" method="post" class="form-01">
+                            <div class="fieldset">
+                                <div class="field">
+                                    <label>E-mail:</label>
+                                    <div class="input">
+                                        <input type="text" name="email" />
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <label>Password:</label>
+                                    <div class="input">
+                                        <input type="password" name="password" />
+                                    </div>
+                                </div>
+                                <div class="field submit-inline">
+                                    <input type="image" src="/public/images/buttons/001.gif" name="submitLogin" />
+                                </div>
+                            </div>
+                        </form>
+                        <div class="links">
+                            <a href="#">Did you forget your account details?</a> | <a href="<?php echo $this->url(array('controller' => 'authentication', 'action' => 'register'), null, true); ?>">Not yet registered?</a>
+                        </div>
+                    </div>
+                <?php endif; ?>
+            </div>
+            <div class="page-container">
+                <div class="menu-container">
+                    <ul>
+                        <?php foreach($this->system['mainMenu'] as $mainMenu) : ?>
+                            <?php if(($this->system['loginStatus'] && $mainMenu['is_authentication_required']) || !$mainMenu['is_authentication_required']) : ?>
+                                <?php if($mainMenu['is_submenu'] && $this->system['urlParams']['module'] == $mainMenu['module_name'] && $this->system['urlParams']['controller'] == $mainMenu['controller_name']) : ?>
+                                    <li><a href="<?php echo $this->url(array('controller' => $mainMenu['controller_name'], 'action' => $mainMenu['action_name']), null, true); ?>" class="selected"><?php echo $mainMenu['description']; ?></a></li>
+                                <?php elseif(!$mainMenu['is_submenu'] && $this->system['urlParams']['module'] == $mainMenu['module_name'] && $this->system['urlParams']['controller'] == $mainMenu['controller_name'] && $this->system['urlParams']['action'] == $mainMenu['action_name']) : ?>
+                                    <li><a href="<?php echo $this->url(array('controller' => $mainMenu['controller_name'], 'action' => $mainMenu['action_name']), null, true); ?>" class="selected"><?php echo $mainMenu['description']; ?></a></li>
+                                <?php else : ?>
+                                    <li><a href="<?php echo $this->url(array('controller' => $mainMenu['controller_name'], 'action' => $mainMenu['action_name']), null, true); ?>"><?php echo $mainMenu['description']; ?></a></li>
+                                <?php endif; ?>
+                            <?php endif; ?>
+                        <?php endforeach; ?>
+                    </ul>
+                </div>
+                <div class="submenu-container">
+                    <?php if(count($this->system['subMenu']) > 0) : ?>
+                        <ul>
+                            <?php foreach($this->system['subMenu'] as $subMenu) : ?>
+                                <?php if(($this->system['loginStatus'] && $subMenu['is_authentication_required']) || !$subMenu['is_authentication_required']) : ?>
+                                    <?php if($this->system['urlParams']['module'] == $subMenu['module_name'] && $this->system['urlParams']['controller'] == $subMenu['controller_name'] && $this->system['urlParams']['action'] == $subMenu['action_name']) : ?>
+                                        <li><a href="<?php echo $this->url(array('controller' => $subMenu['controller_name'], 'action' => $subMenu['action_name']), null, true); ?>" class="selected"><?php echo $subMenu['description']; ?></a></li>
+                                    <?php else : ?>
+                                        <li><a href="<?php echo $this->url(array('controller' => $subMenu['controller_name'], 'action' => $subMenu['action_name']), null, true); ?>"><?php echo $subMenu['description']; ?></a></li>
+                                    <?php endif; ?>
+                                <?php endif; ?>
+                            <?php endforeach; ?>
+                        </ul>
+                    <?php endif; ?>
+                </div>
+                <?php if(count($this->system['systemAlerts']) > 0) : ?>
+                    <div class="alerts-container block-container-01">
+                        <?php foreach($this->system['systemAlerts'] as $alert) : ?>
+                            <div class="<?php echo $alert['type']; ?>"><?php echo $alert['description']; ?></div>
+                        <?php endforeach; ?>
+                    </div>
+                <?php endif; ?>
+                <div class="content-container">
+                    <?php echo $this->layout()->content; ?>
+                </div>
+                <div class="footer-conatiner">
+                    <ul>
+                        <li><a href="#">© 2012 cams.com. All rights reserved.</a></li>
+                        <li><a href="#">Lorem ipsum</a></li>
+                        <li><a href="#">Lorem ipsum</a></li>
+                        <li><a href="#">Lorem ipsum</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,16 @@
+<div class="header-01">PayPal Payment</div>
+<div class="block-container-02">
+    <form action="<?php echo $this->url(); ?>" method="post" class="form-02">
+        <div class="field">
+            <label>Package:</label>
+            <?php echo $this->forms['payment']->getItem('package'); ?>
+        </div>
+        <div class="field">
+            <label>Operator:</label>
+            <?php echo $this->forms['payment']->getItem('operator'); ?>
+        </div>
+        <div class="submit">
+            <input type="image" src="/public/images/buttons/002.gif" />
+        </div>
+    </form>
+</div>

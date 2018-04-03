@@ -1,0 +1,89 @@
+<div class="header-01">profile</div>
+<div class="block-container-02">
+    <form action="<?php echo $this->url(); ?>" method="post" class="form-02">
+        <table cellspacing="0" cellpadding="0" width="100%">
+            <tr>
+                <td width="455">
+                    <div class="field">
+                        <label>Username:</label>
+                        <?php echo $this->forms['profile']->getItem('username'); ?>
+                    </div>
+                    <div class="field">
+                        <label>E-mail:</label>
+                        <?php echo $this->forms['profile']->getItem('email'); ?>
+                    </div>
+                    <div class="field">
+                        <label>Country:</label>
+                        <?php echo $this->forms['profile']->getItem('country'); ?>
+                    </div>
+                    <div class="field">
+                        <label>Gender:</label>
+                        <?php echo $this->forms['profile']->getItem('gender'); ?>
+                    </div>
+                    <div class="field">
+                        <label>Sexual Preference:</label>
+                        <?php echo $this->forms['profile']->getItem('sexual_preference'); ?>
+                    </div>
+                    <div class="field">
+                        <label>Zodiac:</label>
+                        <?php echo $this->forms['profile']->getItem('zodiac'); ?>
+                    </div>
+                </td>
+                <td width="10"></td>
+                <td width="455">
+                    <div class="field">
+                        <label>Hair Color:</label>
+                        <?php echo $this->forms['profile']->getItem('hair_color'); ?>
+                    </div>
+                    <div class="field">
+                        <label>Eye Color:</label>
+                        <?php echo $this->forms['profile']->getItem('eye_color'); ?>
+                    </div>
+                    <div class="field">
+                        <label>Build:</label>
+                        <?php echo $this->forms['profile']->getItem('build'); ?>
+                    </div>
+                    <div class="field">
+                        <label>Ethnicity:</label>
+                        <?php echo $this->forms['profile']->getItem('ethnicity'); ?>
+                    </div>
+                    <div class="field">
+                        <label>Cup Size:</label>
+                        <?php echo $this->forms['profile']->getItem('cup_size'); ?>
+                    </div>
+                    <div class="field">
+                        <label>Pubic Hair:</label>
+                        <?php echo $this->forms['profile']->getItem('pubic_hair'); ?>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <div class="submit">
+            <input type="image" name="profileSubmit" src="/public/images/buttons/002.gif" />
+        </div>
+    </form>
+</div>
+<div class="header-01">change password</div>
+<div class="block-container-02">
+    <form action="<?php echo $this->url(); ?>" method="post" class="form-01">
+        <div class="fieldset">
+            <div class="field">
+                <label>Old password:</label>
+                <?php echo $this->forms['password']->getItem('old_password'); ?>
+            </div>
+            <div class="field">
+                <label>New password:</label>
+                <?php echo $this->forms['password']->getItem('new_password'); ?>
+            </div>
+            <div class="field">
+                <label>Confirm new password:</label>
+                <?php echo $this->forms['password']->getItem('new_password_confirm'); ?>
+            </div>
+            <div class="field">
+                <div class="submit-inline">
+                    <input type="image" name="passwordSubmit" src="/public/images/buttons/002.gif" />
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,732 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 12 (filtered)">
+<title>Adobe® Flash® Media Server 4 Read Me</title>
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Cambria;
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+h3
+	{mso-style-link:"Heading 3 Char";
+	margin-right:0in;
+	margin-left:0in;
+	page-break-after:avoid;
+	font-size:13.0pt;
+	font-family:"Arial","sans-serif";
+	font-weight:bold;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;}
+p
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+span.Heading3Char
+	{mso-style-name:"Heading 3 Char";
+	mso-style-link:"Heading 3";
+	font-family:"Cambria","serif";
+	color:#4F81BD;
+	font-weight:bold;}
+p.msolistparagraphcxspfirst, li.msolistparagraphcxspfirst, div.msolistparagraphcxspfirst
+	{mso-style-name:msolistparagraphcxspfirst;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+p.msolistparagraphcxspmiddle, li.msolistparagraphcxspmiddle, div.msolistparagraphcxspmiddle
+	{mso-style-name:msolistparagraphcxspmiddle;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+p.msolistparagraphcxsplast, li.msolistparagraphcxsplast, div.msolistparagraphcxsplast
+	{mso-style-name:msolistparagraphcxsplast;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+p.msonormal1, li.msonormal1, div.msonormal1
+	{mso-style-name:msonormal1;
+	margin-right:0in;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+p.msonormal2, li.msonormal2, div.msonormal2
+	{mso-style-name:msonormal2;
+	margin-right:0in;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+p.msonormal3, li.msonormal3, div.msonormal3
+	{mso-style-name:msonormal3;
+	margin-right:0in;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+p.msonormal4, li.msonormal4, div.msonormal4
+	{mso-style-name:msonormal4;
+	margin-right:0in;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+p.msonormal5, li.msonormal5, div.msonormal5
+	{mso-style-name:msonormal5;
+	margin-right:0in;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+p.msonormal6, li.msonormal6, div.msonormal6
+	{mso-style-name:msonormal6;
+	margin-right:0in;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+p.style2, li.style2, div.style2
+	{mso-style-name:style2;
+	margin-right:0in;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	color:red;}
+p.style3, li.style3, div.style3
+	{mso-style-name:style3;
+	margin-right:0in;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+p.msonormalstyle3, li.msonormalstyle3, div.msonormalstyle3
+	{mso-style-name:msonormalstyle3;
+	margin-right:0in;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+p.msochpdefault, li.msochpdefault, div.msochpdefault
+	{mso-style-name:msochpdefault;
+	margin-right:0in;
+	margin-left:0in;
+	font-size:10.0pt;
+	font-family:"Times New Roman","serif";}
+p.style1, li.style1, div.style1
+	{mso-style-name:style1;
+	margin-right:0in;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+span.heading3char0
+	{mso-style-name:heading3char;
+	font-family:"Cambria","serif";
+	color:#4F81BD;
+	font-weight:bold;}
+span.style21
+	{mso-style-name:style21;
+	color:red;}
+span.section1
+	{mso-style-name:section1;}
+.MsoChpDefault
+	{font-size:10.0pt;}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US link=blue vlink=purple>
+
+<div class=Section1>
+
+<div>
+
+<p><span style='font-size:18.0pt;font-family:"Calibri","sans-serif"'>Adobe</span><span
+style='font-size:14.0pt;font-family:"Calibri","sans-serif"'>®</span><span
+style='font-size:18.0pt;font-family:"Calibri","sans-serif"'> Flash</span><span
+style='font-size:14.0pt;font-family:"Calibri","sans-serif"'>®</span><span
+style='font-size:18.0pt;font-family:"Calibri","sans-serif"'> Media Server 4.5
+Read Me </span></p>
+
+<p><span style='font-size:11.0pt;font-family:"Calibri","sans-serif"'>Welcome to
+the Adobe® Flash® Media Server 4.5 release!&nbsp; This document contains
+late-breaking product information and updates concerning this release. </span></p>
+
+<p><span style='font-size:11.0pt;font-family:"Calibri","sans-serif"'><a
+href="#_Minimum_system_requirements">Minimum system requirements</a> <br>
+<a href="#_What’s_new_in">What’s new in this release</a><br>
+<a href="#_Install_your_software">Install your software</a> <br>
+<a href="#_Uninstall_your_software">Uninstall your software</a><br>
+<a href="#_Other_resources">Other resources</a> <br>
+<a href="#_Additional_Licenses">Additional Licenses and Copyrights</a></span></p>
+
+<h3><a name="_Minimum_system_requirements"></a><span style='font-family:"Calibri","sans-serif"'>Minimum
+system requirements </span></h3>
+
+<p class=MsoNormal style='margin-top:.1pt;margin-right:0in;margin-bottom:.1pt;
+margin-left:0in'><b><span style='font-size:11.0pt;font-family:"Calibri","sans-serif"'>Supported
+operating systems</span></b><span style='font-size:11.0pt;font-family:"Calibri","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoListParagraph style='margin-top:0in;margin-right:0in;margin-bottom:
+.1pt;margin-left:73.5pt;text-indent:-19.5pt'><span style='font-size:10.0pt;
+font-family:"Calibri","sans-serif"'>·</span><span style='font-size:7.0pt;
+font-family:"Calibri","sans-serif"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:11.0pt;font-family:"Calibri","sans-serif"'>Microsoft®
+Windows Server 2008 R2 64 bit</span></p>
+
+<p class=MsoListParagraph style='margin-top:0in;margin-right:0in;margin-bottom:
+.1pt;margin-left:73.5pt;text-indent:-19.5pt'><span style='font-size:10.0pt;
+font-family:"Calibri","sans-serif"'>·</span><span style='font-size:7.0pt;
+font-family:"Calibri","sans-serif"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:11.0pt;font-family:"Calibri","sans-serif"'>Microsoft®
+Windows Server 2003 SP2 64 bit</span><u1:p></u1:p></p>
+
+<p class=MsoListParagraph style='margin-top:0in;margin-right:0in;margin-bottom:
+.1pt;margin-left:73.5pt;text-indent:-19.5pt'><span style='font-size:10.0pt;
+font-family:"Calibri","sans-serif"'>·</span><span style='font-size:7.0pt;
+font-family:"Calibri","sans-serif"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:11.0pt;font-family:"Calibri","sans-serif"'>Linux
+CENTOS 5.5 64 bit</span><u1:p></u1:p></p>
+
+<p class=MsoListParagraph style='margin-top:0in;margin-right:0in;margin-bottom:
+.1pt;margin-left:73.5pt;text-indent:-19.5pt'><span style='font-size:10.0pt;
+font-family:"Calibri","sans-serif"'>·</span><span style='font-size:7.0pt;
+font-family:"Calibri","sans-serif"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:11.0pt;font-family:"Calibri","sans-serif"'>Red
+Hat® Enterprise Linux® Server 5 64 bit</span></p>
+
+<p class=MsoNormal style='margin-top:.1pt;margin-right:0in;margin-bottom:.1pt;
+margin-left:1.0in'><span style='font-size:11.0pt;font-family:"Calibri","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-top:.1pt;margin-right:0in;margin-bottom:.1pt;
+margin-left:0in'><b><span style='font-size:11.0pt;font-family:"Calibri","sans-serif"'>Minimum
+hardware requirements</span></b></p>
+
+<p class=MsoNormal style='margin-top:.1pt;margin-right:0in;margin-bottom:.1pt;
+margin-left:.5in'><span style='font-size:11.0pt;font-family:"Calibri","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoListParagraph style='margin-top:.1pt;margin-right:0in;margin-bottom:
+.1pt;margin-left:73.5pt;text-indent:-19.5pt'><span style='font-size:10.0pt;
+font-family:"Calibri","sans-serif"'>·</span><span style='font-size:7.0pt;
+font-family:"Calibri","sans-serif"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:11.0pt;font-family:"Calibri","sans-serif"'>3.2GHz
+Intel® Pentium® 4 processor (dual Intel Xeon® or faster recommended)</span></p>
+
+<p class=MsoListParagraph style='margin-top:.1pt;margin-right:0in;margin-bottom:
+.1pt;margin-left:73.5pt;text-indent:-19.5pt'><span style='font-size:10.0pt;
+font-family:"Calibri","sans-serif"'>·</span><span style='font-size:7.0pt;
+font-family:"Calibri","sans-serif"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:11.0pt;font-family:"Calibri","sans-serif"'>Memory: 
+4 GB RAM / 8 GB RAM recommended</span></p>
+
+<p class=MsoListParagraph style='margin-top:.1pt;margin-right:0in;margin-bottom:
+.1pt;margin-left:73.5pt;text-indent:-19.5pt'><span style='font-size:10.0pt;
+font-family:"Calibri","sans-serif"'>·</span><span style='font-size:7.0pt;
+font-family:"Calibri","sans-serif"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:11.0pt;font-family:"Calibri","sans-serif"'>1GB
+Ethernet card</span></p>
+
+<h3><a name="_Install_your_software"></a><a name="_What’s_new_in"></a><span
+style='font-family:"Calibri","sans-serif"'>What’s new in this release</span></h3>
+
+<p class=MsoNormal style='text-autospace:none'><span style='font-family:"Calibri","sans-serif"'>VI</span><span
+style='font-size:11.0pt;font-family:"Calibri","sans-serif"'>DEO STREAMING</span></p>
+
+<p class=MsoNormal style='text-autospace:none'><span style='font-size:11.0pt;
+font-family:"Calibri","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-autospace:none'><b><span style='font-size:11.0pt;
+font-family:"Calibri","sans-serif"'>HTTP Streaming for Apple iOS</span></b></p>
+
+<p class=MsoNormal style='text-autospace:none'><span style='font-size:11.0pt;
+font-family:"Calibri","sans-serif"'>Deliver high quality live and on demand
+video to devices and HTML5 supporting HLS video format with the same media and
+live streams used for Flash.&nbsp;&nbsp;Full adaptive bitrate can reach
+audiences without disruptions caused by wireless networks.</span></p>
+
+<p class=MsoNormal style='text-autospace:none'><span style='font-size:11.0pt;
+font-family:"Calibri","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-autospace:none'><b><span style='font-size:11.0pt;
+font-family:"Calibri","sans-serif"'>On Demand Packaging for HTTP</span></b></p>
+
+<p class=MsoNormal style='text-autospace:none'><span style='font-size:11.0pt;
+font-family:"Calibri","sans-serif"'>Deliver video using HTTP for Adobe Flash
+and Apple iOS without preparing the video assets ahead of time.&nbsp;&nbsp;On
+Demand packaging makes publishing easier by requiring one set of video to
+deliver to multiple devices with or without Flash installed.</span></p>
+
+<p class=MsoNormal style='text-autospace:none'><span style='font-size:11.0pt;
+font-family:"Calibri","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-autospace:none'><b><span style='font-size:11.0pt;
+font-family:"Calibri","sans-serif"'>HTTP Origin Services</span></b></p>
+
+<p class=MsoNormal style='text-autospace:none'><span style='font-size:11.0pt;
+font-family:"Calibri","sans-serif"'>Stream your media to all devices from a
+high performance built-in HTTP server built on Apache.&nbsp;&nbsp;</span></p>
+
+<p class=MsoNormal style='text-autospace:none'><span style='font-size:11.0pt;
+font-family:"Calibri","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-autospace:none'><b><span style='font-size:11.0pt;
+font-family:"Calibri","sans-serif"'>Audio extraction for HTTP&nbsp;&nbsp;</span></b></p>
+
+<p class=MsoNormal style='text-autospace:none'><span style='font-size:11.0pt;
+font-family:"Calibri","sans-serif"'>Deliver an audio-only stream for mobile
+devices on wireless networks to prevent re-buffering and meet Apple app-store
+requirements for audio-only bitrate as part of a multi-bitrate set.</span></p>
+
+<p class=MsoNormal style='text-autospace:none'><span style='font-size:11.0pt;
+font-family:"Calibri","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-autospace:none'><b><span style='font-size:11.0pt;
+font-family:"Calibri","sans-serif"'>Adaptive Bitrate Manifest support</span></b></p>
+
+<p class=MsoNormal style='text-autospace:none'><span style='font-size:11.0pt;
+font-family:"Calibri","sans-serif"'>Manifest files inform the media player of
+the bitrates available to enable adaptive bitrate streaming. F4M and M3u8 Set
+Manifests describe the bitrates and file sources for the player. This feature
+requires OSMF 1.6 for Flash or Apple iOS.</span></p>
+
+<p class=MsoNormal style='text-autospace:none'><span style='font-size:11.0pt;
+font-family:"Calibri","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-autospace:none'><span style='font-size:11.0pt;
+font-family:"Calibri","sans-serif"'>PROTECTION AND SECURITY</span></p>
+
+<p class=MsoNormal style='text-autospace:none'><span style='font-size:11.0pt;
+font-family:"Calibri","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-autospace:none'><b><span style='font-size:11.0pt;
+font-family:"Calibri","sans-serif"'>Protected HTTP Dynamic Streaming for Flash</span></b></p>
+
+<p class=MsoNormal style='text-autospace:none'><span style='font-size:11.0pt;
+font-family:"Calibri","sans-serif"'>Game changing real time encryption,
+cacheable key delivery and player binding make it simple and low cost to
+protect your content streamed using HTTP to desktop and devices with reduced
+complexity.</span></p>
+
+<p class=MsoNormal style='text-autospace:none'><span style='font-size:11.0pt;
+font-family:"Calibri","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-autospace:none'><b><span style='font-size:11.0pt;
+font-family:"Calibri","sans-serif"'>Protected HTTP Live Streaming for Apple iOS</span></b></p>
+
+<p class=MsoNormal style='text-autospace:none'><span style='font-size:11.0pt;
+font-family:"Calibri","sans-serif"'>Real time encryption, secure key delivery
+and Apple device binding let you deliver high quality video to Apple devices
+using standard AES128 bit encryption for both live and video on demand.</span></p>
+
+<p class=MsoNormal style='text-autospace:none'><span style='font-size:11.0pt;
+font-family:"Calibri","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-autospace:none'><b><span style='font-size:11.0pt;
+font-family:"Calibri","sans-serif"'>Adobe Flash Access DRM ready</span></b></p>
+
+<p class=MsoNormal style='text-autospace:none'><span style='font-size:11.0pt;
+font-family:"Calibri","sans-serif"'>Robust DRM support with Adobe Flash Access
+lets you apply sophisticated business rules and policies to support premium
+video experiences for live, linear and on demand video.</span></p>
+
+<p class=MsoNormal style='text-autospace:none'><span style='font-size:11.0pt;
+font-family:"Calibri","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-autospace:none'><span style='font-size:11.0pt;
+font-family:"Calibri","sans-serif"'>FAULT TOLERANT STREAMING</span></p>
+
+<p class=MsoNormal style='text-autospace:none'><span style='font-size:11.0pt;
+font-family:"Calibri","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-autospace:none'><b><span style='font-size:11.0pt;
+font-family:"Calibri","sans-serif"'>Disk Management for HTTP</span></b></p>
+
+<p class=MsoNormal style='text-autospace:none'><span style='font-size:11.0pt;
+font-family:"Calibri","sans-serif"'>Disk management for live HTTP streaming
+ensures your video stream will remain playing while managing your storage disks
+your storage disks do not run out of space enabling you to safely deliver rich,
+live experiences with rolling DVR windows, time shifting and instant replay
+experiences</span></p>
+
+<p class=MsoNormal style='text-autospace:none'><span style='font-size:11.0pt;
+font-family:"Calibri","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-autospace:none'><span style='font-size:11.0pt;
+font-family:"Calibri","sans-serif"'>VIDEO FOUNDATION</span></p>
+
+<p class=MsoNormal style='text-autospace:none'><span style='font-size:11.0pt;
+font-family:"Calibri","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-autospace:none'><b><span style='font-size:11.0pt;
+font-family:"Calibri","sans-serif"'>HLS file format for Apple iOS</span></b></p>
+
+<p class=MsoNormal style='text-autospace:none'><span style='font-size:11.0pt;
+font-family:"Calibri","sans-serif"'>HTTP Live Streaming (HLS)&nbsp;&nbsp;is the
+format for Apple iOS, is supported inside the Safari browser and within Apps
+including Adobe AIR for iOS and can also be used by other devices supporting
+HLS.&nbsp;&nbsp;HLS support includes adaptive bitrate for both live and VoD.</span></p>
+
+<p class=MsoNormal style='text-autospace:none'><b><span style='font-size:11.0pt;
+font-family:"Calibri","sans-serif"'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='text-autospace:none'><b><span style='font-size:11.0pt;
+font-family:"Calibri","sans-serif"'>Variant Manifests for Adobe Flash and Apple
+iOS</span></b></p>
+
+<p class=MsoNormal style='text-autospace:none'><span style='font-size:11.0pt;
+font-family:"Calibri","sans-serif"'>Deliver adaptive bitrate content over HTTP
+using variant play lists to describe the video bitrates to the player before
+you start streaming.  The server will do the rest to get the streams started
+and maintain the manifests.</span></p>
+
+<p class=MsoNormal style='text-autospace:none'><span style='font-size:11.0pt;
+font-family:"Calibri","sans-serif"'>&nbsp;&nbsp;</span></p>
+
+<p class=MsoNormal style='text-autospace:none'><b><span style='font-size:11.0pt;
+font-family:"Calibri","sans-serif"'>Multi-protocol Manifest Generator tools</span></b></p>
+
+<p class=MsoNormal style='text-autospace:none'><span style='font-size:11.0pt;
+font-family:"Calibri","sans-serif"'>Generating manifest files is easier and
+with fewer errors with new tools so you don't have to cut out creating F4M and
+M3u8 files manually for Live and VOD delivery to Flash, Apple for HTTP, RTMP,
+RTMFP Multicast Fusion delivery.</span></p>
+
+<p class=MsoNormal style='text-autospace:none'><span style='font-size:11.0pt;
+font-family:"Calibri","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-autospace:none'><b><span style='font-size:11.0pt;
+font-family:"Calibri","sans-serif"'>Multicast Ingest and Recording</span></b></p>
+
+<p class=MsoNormal style='text-autospace:none'><span style='font-size:11.0pt;
+font-family:"Calibri","sans-serif"'>Replicate live video more efficiently within
+your enterprise network by consuming, recording and republishing multicast
+streams to additional multicast networks,&nbsp;or downgrading to unicast, HTTP
+Dynamic Streaming or even HLS for Apple iOS.</span></p>
+
+<p class=MsoNormal style='text-autospace:none'><span style='font-size:11.0pt;
+font-family:"Calibri","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-autospace:none'><span style='font-size:11.0pt;
+font-family:"Calibri","sans-serif"'>COMMUNICATIONS</span></p>
+
+<p class=MsoNormal style='text-autospace:none'><span style='font-size:11.0pt;
+font-family:"Calibri","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-autospace:none'><b><span style='font-size:11.0pt;
+font-family:"Calibri","sans-serif"'>High quality Audio Video Capture support</span></b></p>
+
+<p class=MsoNormal style='text-autospace:none'><span style='font-size:11.0pt;
+font-family:"Calibri","sans-serif"'>Create new social and game apps with higher
+quality video and voice communication that can be used across multiple devices
+which support Flash or AIR including Android, Apple iOS and most web browsers
+and SIP enabled devices.</span></p>
+
+<p class=MsoNormal style='text-autospace:none'><span style='font-size:11.0pt;
+font-family:"Calibri","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-autospace:none'><b><span style='font-size:11.0pt;
+font-family:"Calibri","sans-serif"'>P2P Introduction forwarding for RTMFP</span></b></p>
+
+<p class=MsoNormal style='text-autospace:none'><span style='font-size:11.0pt;
+font-family:"Calibri","sans-serif"'>Increase capacity and improve
+fault-tolerance for p2p communication and multicast by distributing the p2p
+introductions across multiple servers that are working together.</span></p>
+
+<p class=MsoNormal style='text-autospace:none'><span style='font-size:11.0pt;
+font-family:"Calibri","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-autospace:none'><b><span style='font-size:11.0pt;
+font-family:"Calibri","sans-serif"'>Support for SIP-enabled devices<br>
+</span></b><span style='font-size:11.0pt;font-family:"Calibri","sans-serif"'>Integrate
+devices and conferencing technologies with a unified communication application
+using new SIP gateway services.&nbsp;Connect people using Adobe Flash or AIR
+apps to conference rooms, mobile phones or other SIP-enabled communication
+services.<b>&nbsp;&nbsp;</b></span></p>
+
+<h3><span style='font-family:"Calibri","sans-serif"'>Install your software</span></h3>
+
+<p><b><i><span style='font-size:11.0pt;font-family:"Calibri","sans-serif"'>To install
+Flash Media Server on Windows: </span></i></b></p>
+
+<p style='margin-left:.5in;text-indent:-.25in'><span style='font-size:11.0pt;
+font-family:"Calibri","sans-serif"'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:11.0pt;font-family:"Calibri","sans-serif"'>Double-click
+the installer application and follow the on-screen instructions. </span></p>
+
+<p style='margin-left:.5in;text-indent:-.25in'><span style='font-size:11.0pt;
+font-family:"Calibri","sans-serif"'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:11.0pt;font-family:"Calibri","sans-serif"'>Enter
+a serial number. If you don't enter a serial number, Flash Media Development
+Server installs.</span></p>
+
+<p style='margin-left:.5in;text-indent:-.25in'><span style='font-size:11.0pt;
+font-family:"Calibri","sans-serif"'>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:11.0pt;font-family:"Calibri","sans-serif"'>During
+the installation process you will be asked to enter a user name and password
+for the first valid server administrator. These values are written to the
+fms.ini file which is located in the conf folder after installation. (You can
+use the Administration Console to add other administrators later.) </span></p>
+
+<p style='margin-left:.5in;text-indent:-.25in'><span style='font-size:11.0pt;
+font-family:"Calibri","sans-serif"'>4.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:11.0pt;font-family:"Calibri","sans-serif"'>Accept
+the default server ports or enter new port numbers. </span></p>
+
+<p style='margin-left:.5in;text-indent:-.25in'><span style='font-size:11.0pt;
+font-family:"Calibri","sans-serif"'>5.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:11.0pt;font-family:"Calibri","sans-serif"'>The
+final installation step gives you the opportunity to view the Readme.htm file,
+start Flash Media Server, and select the option to start Flash Media Server
+manually when you reboot your computer. Select any options you'd like, and
+click Finish. </span></p>
+
+<p style='margin-left:.5in;text-indent:-.25in'><span style='font-size:11.0pt;
+font-family:"Calibri","sans-serif"'>6.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:11.0pt;font-family:"Calibri","sans-serif"'>The
+installation is complete. If you configured it to start automatically, the
+Flash Media Server service starts. To start the server manually, select Start
+&gt; Programs &gt; Adobe &gt; Flash Media Server &gt; Start Adobe Flash Media
+Server and Start Flash Media Administration Server.</span></p>
+
+<p style='margin-left:.5in;text-indent:-.25in'><span style='font-size:11.0pt;
+font-family:"Calibri","sans-serif"'>7.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:11.0pt;font-family:"Calibri","sans-serif"'>To
+open the Flash Media Administration Console, select Start &gt; Programs &gt;
+Adobe &gt; Flash Media Server &gt; Flash Media Administration Console. </span></p>
+
+<p><b><i><span style='font-size:11.0pt;font-family:"Calibri","sans-serif"'>To
+install Flash Media Server on Linux: </span></i></b></p>
+
+<p style='margin-left:.5in;text-indent:-.25in'><span style='font-size:11.0pt;
+font-family:"Calibri","sans-serif"'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:11.0pt;font-family:"Calibri","sans-serif"'>Log
+in as a root user (required to install Flash Media Server).  </span></p>
+
+<p style='margin-left:.5in;text-indent:-.25in'><span style='font-size:11.0pt;
+font-family:"Calibri","sans-serif"'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:11.0pt;font-family:"Calibri","sans-serif"'>Open
+a shell window and switch to the directory with the installation file,
+FlashMediaServer4.5.tar.gz</span></p>
+
+<p style='margin-left:.5in;text-indent:-.25in'><span style='font-size:11.0pt;
+font-family:"Calibri","sans-serif"'>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:11.0pt;font-family:"Calibri","sans-serif"'>Unzip
+and untar the installation file. A directory with the installation program is
+created.  </span></p>
+
+<p style='margin-left:.5in;text-indent:-.25in'><span style='font-size:11.0pt;
+font-family:"Calibri","sans-serif"'>4.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:11.0pt;font-family:"Calibri","sans-serif"'>Switch
+to the directory that was just unzipped.</span></p>
+
+<p style='margin-left:.5in;text-indent:-.25in'><span style='font-size:11.0pt;
+font-family:"Calibri","sans-serif"'>5.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:11.0pt;font-family:"Calibri","sans-serif"'>Start
+the installation program with the following command: ./installFMS</span></p>
+
+<p style='margin-left:.5in;text-indent:-.25in'><span style='font-size:11.0pt;
+font-family:"Calibri","sans-serif"'>6.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:11.0pt;font-family:"Calibri","sans-serif"'>The
+installation program starts and displays a welcome message. </span></p>
+
+<p style='margin-left:.5in;text-indent:-.25in'><span style='font-size:11.0pt;
+font-family:"Calibri","sans-serif"'>7.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:11.0pt;font-family:"Calibri","sans-serif"'>Press
+Enter to start the installation. Follow the installation instructions on your
+screen. During the process you will be asked to </span></p>
+
+<p style='margin-left:.5in;text-indent:-.25in'><span style='font-size:11.0pt;
+font-family:"Calibri","sans-serif"'>8.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:11.0pt;font-family:"Calibri","sans-serif"'>Enter
+a serial number. If you don't enter a serial number, Flash Media Development
+Server installs.</span></p>
+
+<p style='margin-left:.5in;text-indent:-.25in'><span style='font-size:11.0pt;
+font-family:"Calibri","sans-serif"'>9.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:11.0pt;font-family:"Calibri","sans-serif"'>Enter
+the installation directory and ports which the server will use </span></p>
+
+<p style='margin-left:.5in;text-indent:-.25in'><span style='font-size:11.0pt;
+font-family:"Calibri","sans-serif"'>10.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
+</span></span><span style='font-size:11.0pt;font-family:"Calibri","sans-serif"'>Enter
+an administrative user name and password for the first valid server
+administrator. These values are written to the fms.ini file which is located
+inside of the conf folder after the installation. </span></p>
+
+<p style='margin-left:.5in;text-indent:-.25in'><span style='font-size:11.0pt;
+font-family:"Calibri","sans-serif"'>11.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
+</span></span><span style='font-size:11.0pt;font-family:"Calibri","sans-serif"'>Enter
+a user for Flash Media Server processes to run as. The default is the
+&quot;nobody&quot; user. (The user you select is also the owner of the Flash
+Media Server files.) Your choices are written to the fms.ini file. You can edit
+the fms.ini file to modify this and other security properties later, if needed.</span></p>
+
+<p style='margin-left:.5in;text-indent:-.25in'><span style='font-size:11.0pt;
+font-family:"Calibri","sans-serif"'>12.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
+</span></span><span style='font-size:11.0pt;font-family:"Calibri","sans-serif"'>Review
+the summary of the installation options you have chosen, which are displayed in
+the installer. </span></p>
+
+<p style='margin-left:.5in;text-indent:-.25in'><span style='font-size:11.0pt;
+font-family:"Calibri","sans-serif"'>13.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
+</span></span><span style='font-size:11.0pt;font-family:"Calibri","sans-serif"'>To
+start the server manually, go to the installation directory (default is
+/opt/adobe/fms/). Use the command &quot;./fmsmgr server fms start&quot; to
+start Flash Media Server and &quot;./fmsmgr adminserver start&quot; to start
+Flash Media Administration Server. </span></p>
+
+<p style='margin-left:.5in;text-indent:-.25in'><span style='font-size:11.0pt;
+font-family:"Calibri","sans-serif"'>14.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
+</span></span><span style='font-size:11.0pt;font-family:"Calibri","sans-serif"'>The
+installation is complete. If you configured it to start automatically, the
+Flash Media Server service starts. </span></p>
+
+<h3><a name="_Uninstall_your_software"></a><span style='font-family:"Calibri","sans-serif"'>Uninstall
+your software</span></h3>
+
+<p><b><i><span style='font-size:11.0pt;font-family:"Calibri","sans-serif"'>To
+uninstall Flash Media Server from a Windows computer: </span></i></b></p>
+
+<p style='margin-left:.5in;text-indent:-.25in'><span style='font-size:11.0pt;
+font-family:"Calibri","sans-serif"'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:11.0pt;font-family:"Calibri","sans-serif"'>Select
+Start &gt; Programs &gt; Adobe &gt; Flash Media Server &gt; Uninstall Adobe
+Flash Media Server </span></p>
+
+<p style='margin-left:.5in;text-indent:-.25in'><span style='font-size:11.0pt;
+font-family:"Calibri","sans-serif"'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:11.0pt;font-family:"Calibri","sans-serif"'>In
+the confirmation dialog box, click Yes to uninstall Flash Media Server. </span></p>
+
+<p style='margin-left:.5in;text-indent:-.25in'><span style='font-size:11.0pt;
+font-family:"Calibri","sans-serif"'>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:11.0pt;font-family:"Calibri","sans-serif"'>Flash
+Media Server is removed from your computer. A second confirmation dialog box
+appears when the process is complete.</span></p>
+
+<p><b><i><span style='font-size:11.0pt;font-family:"Calibri","sans-serif"'>To
+uninstall Flash Media Server from a Linux computer: </span></i></b></p>
+
+<p style='margin-left:.5in;text-indent:-.25in'><span style='font-size:11.0pt;
+font-family:"Calibri","sans-serif"'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:11.0pt;font-family:"Calibri","sans-serif"'>Log
+on to the server where Flash Media Server was installed. </span></p>
+
+<p style='margin-left:.5in;text-indent:-.25in'><span style='font-size:11.0pt;
+font-family:"Calibri","sans-serif"'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:11.0pt;font-family:"Calibri","sans-serif"'>Switch
+to the root user, or a user with root permissions. Normally you would use su -
+root to switch to the root user. </span></p>
+
+<p style='margin-left:.5in;text-indent:-.25in'><span style='font-size:11.0pt;
+font-family:"Calibri","sans-serif"'>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:11.0pt;font-family:"Calibri","sans-serif"'>At
+the UNIX shell prompt, enter cd /opt/adobe/fms.</span></p>
+
+<p style='margin-left:.5in;text-indent:-.25in'><span style='font-size:11.0pt;
+font-family:"Calibri","sans-serif"'>4.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:11.0pt;font-family:"Calibri","sans-serif"'>By
+default, /opt/adobe/fms is the directory where Flash Media Server is installed.
+If you installed the server in a different directory, replace /opt/adobe/fms
+with the actual installation location.</span></p>
+
+<p style='margin-left:.5in;text-indent:-.25in'><span style='font-size:11.0pt;
+font-family:"Calibri","sans-serif"'>5.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:11.0pt;font-family:"Calibri","sans-serif"'>Execute
+the uninstall script ./uninstallFMS. </span></p>
+
+<p style='margin-left:.5in;text-indent:-.25in'><span style='font-size:11.0pt;
+font-family:"Calibri","sans-serif"'>6.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:11.0pt;font-family:"Calibri","sans-serif"'>Follow
+the displayed uninstall instructions.&nbsp;</span></p>
+
+<h3><a name="_Known_Issues" id="_Known_Issues"></a><span style='font-family:
+"Calibri","sans-serif"'>Known Issues </span></h3>
+
+<p><span style='font-size:11.0pt;font-family:"Calibri","sans-serif"'>Please
+refer to the <a href="http://www.adobe.com/go/flashmediaserver_releasenotes_en">Release
+Notes on adobe.com </a>for the list of known issues with this release. </span></p>
+
+<h3><a name="_Other_resources"></a><span style='font-family:"Calibri","sans-serif"'>Other
+resources</span></h3>
+
+<p><span style='font-size:11.0pt;font-family:"Calibri","sans-serif"'><a
+href="http://www.adobe.com/go/flashmediaserver_docs_en">Flash Media Server Documentation
+Center</a></span><span style='font-family:"Calibri","sans-serif"'><br>
+</span><span style='font-size:11.0pt;font-family:"Calibri","sans-serif"'><a
+href="http://www.adobe.com/go/flashmediaserver_en">Flash Media Server Product
+Home</a></span><span style='font-family:"Calibri","sans-serif"'><br>
+</span><span style='font-size:11.0pt;font-family:"Calibri","sans-serif"'><a
+href="http://www.adobe.com/go/flashmediaserver_desdev_en">Flash Media Server
+Developer Center</a></span><span style='font-family:"Calibri","sans-serif"'><br>
+</span><span style='font-size:11.0pt;font-family:"Calibri","sans-serif"'><a
+href="http://www.adobe.com/go/fms_eula">Flash Media Server End User License
+Agreement</a></span><span style='font-family:"Calibri","sans-serif"'><br>
+</span><span style='font-size:11.0pt;font-family:"Calibri","sans-serif"'><a
+href="http://forums.adobe.com/community/flash/flash_media_server">Flash Media
+Server Online Forums</a></span><span style='font-family:"Calibri","sans-serif"'><br>
+</span><span style='font-size:11.0pt;font-family:"Calibri","sans-serif"'><a
+href="http://www.adobe.com/go/fvss">Flash Video Streaming Service</a> </span><span
+style='font-family:"Calibri","sans-serif"'><br>
+</span><span style='font-size:11.0pt;font-family:"Calibri","sans-serif"'><a
+href="http://www.adobe.com/products/flashmediaserver/fmsp/encoding.html">Flash
+Media Solutions Providers</a> </span><span style='font-family:"Calibri","sans-serif"'><br>
+</span><span style='font-size:11.0pt;font-family:"Calibri","sans-serif"'><a
+href="http://www.adobe.com/go/flashplayer">Flash Player Product Home</a></span></p>
+
+<h3><a name="_Additional_Licenses"></a><span class=section1><span
+style='font-family:"Calibri","sans-serif"'>Additional Licenses and Copyrights</span></span></h3>
+
+<p><span lang=EN style='font-size:11.0pt;font-family:"Calibri","sans-serif";
+color:black'>Notices, terms and conditions pertaining to third party software
+can be found at <a href="http://www.adobe.com/go/thirdparty">http://www.adobe.com/go/thirdparty</a>.
+</span></p>
+
+</div>
+
+</div>
+
+</body>
+
+</html>

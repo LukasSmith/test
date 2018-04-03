@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Untitled Document</title>
+<style type="text/css">
+.red {
+	color: #F00;
+}
+</style>
+</head>
+
+<body>
+<p><strong>Folder Details for /webroot/vod/</strong></p>
+<p><em>Media placed in this folder (or folders below) can be accessed using all protocols supported by Flash Media Server including HTTP Dynamic Streaming, HTTP Live Streaming (HLS), RTMP and HTTP Progressive Download. Review the instructions below to learn how to access your video files using the separate protocols.</em></p>
+<p><span class="red">WARNING: Unprotected media stored in this folder without configuration changes can be downloaded and cached on the client. </span><br />
+  </p>
+<p><strong>HOW TO USE:</strong></p>
+<p>Place F4V files in the /webroot/vod folder to deliver the files over HTTP (PD, HLS, HDS) or RTMP. </p>
+<p>To access your files in OSMF-based players use the following URLs: </p>
+<ol>
+  <li> <strong>HTTP Dynamic Streaming (Flash)   </strong><br />
+  http://&lt;fms_server&gt;/hds-vod/filename.f4v.f4m<br />
+  </li>
+  <li><strong>HTTP Live Streaming HLS (Apple iOS)</strong><br />
+    http://&lt;fms_server&gt;/hls-vod/filename.f4v.m3u8<br />
+  </li>
+  <li><strong>HTTP Progressive Download (Flash or Apple iOS)</strong><br />
+    http://&lt;fms_server&gt;/vod/filename.f4v<br />
+  </li>
+  <li><strong>RTMP Dynamic Streaming (Flash)</strong><br />
+    rtmp://&lt;fms_server&gt;/vod/mp4:filename.f4v<br />
+    <em>Note: RTMP Includes support for the following protocols: RTMP, RTMPE, RTMPS, RTMPT, and RTMPTE</em>.<br />
+  </li>
+</ol>
+<p><strong>To change the location of the vod folder:</strong></p>
+<ol>
+  <li>(for HTTP Progressive and RTMP):
+    <ol>
+      <li>Open the conf/fms.ini configuration file</li>
+      <li>Change the VOD_COMMON_DIR parameter to a folder on the web server</li>
+      <li>Restart the server.</li>
+    </ol>
+  </li>
+  <li>(for HTTP Dynamic Streaming and HLS): 
+    <ol>
+      <li>Open the Apache2.2/conf/httpd.conf file</li>
+      <li>Locate the node: &lt;Location /hds-vod&gt;</li>
+      <li>Change the value of: HttpStreamingContentPath </li>
+      <li>Locate the node: &lt;Location /hls-vod&gt;</li>
+      <li>Change the value of: HttpStreamingContentPath </li>
+      <li>Restart the server.<br />
+      </li>
+    </ol>
+  </li>
+</ol>
+<p><strong>To verify that the web server is running:</strong></p>
+<ol>
+  <li> To test the web server, browse to: http://&lt;FMS_Server&gt;/index.html. If you're testing locally, you can use the URL http://localhost/index.html.<br />
+    </li>
+  <li>If the Start Screen does not display in the browser, verify that port 80 is open. </li>
+  <li>Open the conf/fms.ini configuration file.The ADAPTOR.HOSTPORT parameter should be set as follows: ADAPTOR.HOSTPORT = :1935,80</li>
+  <li>If you edited the fms.ini file, restart Flash Media Server and retest the web server.</li>
+</ol>
+</body>
+</html>

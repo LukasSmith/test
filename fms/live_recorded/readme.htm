@@ -1,0 +1,117 @@
+
+<!-- saved from url=(0076)file://vmware-host/Shared%20Folders/Desktop/webroot/live_recorded/readme.htm -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+<style>
+<!--
+a:link, span.MsoHyperlink {
+	color:blue;
+	text-decoration:underline;
+}
+a:visited, span.MsoHyperlinkFollowed {
+	color:purple;
+	text-decoration:underline;
+}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate {
+	font-size:8.0pt;
+	font-family:"Tahoma", "sans-serif";
+}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph {
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri", "sans-serif";
+}
+p.MsoListParagraphCxSpFirst, li.MsoListParagraphCxSpFirst, div.MsoListParagraphCxSpFirst {
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri", "sans-serif";
+}
+p.MsoListParagraphCxSpMiddle, li.MsoListParagraphCxSpMiddle, div.MsoListParagraphCxSpMiddle {
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:Calibri, sans-serif;
+}
+p.MsoListParagraphCxSpLast, li.MsoListParagraphCxSpLast, div.MsoListParagraphCxSpLast {
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri", "sans-serif";
+}
+span.BalloonTextChar {
+	font-family:"Tahoma", "sans-serif";
+}
+.MsoPapDefault {
+	line-height:115%;
+}
+-->
+</style>
+</head>
+<body bgcolor="#FFFFFF" link="blue" vlink="purple" lang="EN-US">
+<div class="Section1">
+  <p>If you installed the built-in Apache HTTP server, use this folder to deliver media assets recorded by <i>Adobe Flash Media Interactive Server 4.5 </i>or<i> Adobe Flash Media Enterprise Server 4.5</i>. Recorded media in this folder
+    is available over RTMP and HTTP Progressive Download.</p>
+  <p>Don't use this  folder for HTTP Dynamic Streaming or HTTP Live Streaming (HLS).  To stream video using these formats,  move the recorded file to the /webroot/vod folder.</p>
+  <p><i>Note: Flash Media Streaming
+    Server 4.5 does not record video.</i></p>
+  <div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt">
+    <p align="center" style="text-align:center;border:none;
+padding:0pt"><b><span style="color:red">WARNING</span></b><span style="color:red">: Unprotected media stored in this folder can be
+      downloaded and cached on the client.</span></p>
+  </div>
+  <p><b><u>HOW TO USE</u></b><u>:</u></p>
+  <p><b>Configure the live_recorded folder:</b></p>
+  <p class="MsoListParagraph">1.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Open
+    the config file: <b><span style="font-size:9.0pt;line-height:115%;font-family:
+&quot;Courier New&quot;">conf/fms.ini</span></b>
+  <p class="MsoListParagraph">2.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Locate
+    the line <b><span style="font-size:9.0pt;line-height:115%;font-family:&quot;Courier New&quot;">LIVE_DIR</span></b> </p>
+  <p class="MsoListParagraph">3.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Locate the following line:<br>
+  LIVE_DIR = &lt;rootinstall&gt;\applications\live</p>
+<p class="MsoListParagraph">4.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Edit the line to read as follows:</p>
+  <p class="MsoListParagraph"><b><span style="font-size:9.0pt;line-height:
+115%;font-family:&quot;Courier New&quot;">LIVE_DIR = &lt;FMS Install Path&gt;\webroot\live_recorded</span></b></p>
+<p class="MsoListParagraph">Any FLV/F4V/MP4 files you place in this folder can be streamed over RTMP or progressively downloaded over HTTP.</p>
+  <p><b>Access points: </b></p>
+  <ul>
+    <li><span class="MsoListParagraphCxSpFirst"><span style="font-size:9.0pt;line-height:
+115%;font-family:&quot;Courier New&quot;">http://<i>&lt;fms_server&gt;</i>/live_recorded/filename.flv</span></span></li>
+    <li><span class="MsoListParagraphCxSpFirst" style="font-size:9.0pt;line-height:115%;font-family:&quot;Courier New&quot;">rtmp://<i>&lt;fms_server&gt;</i>/live/live_recorded/filename</span><br>
+      <i>Includes support for the following protocols: RTMPE, RTMPS, RTMPT, and RTMPTE. If you're using localhost, append port 8134 for the HTTP protocol.</i></li>
+    
+  </ul>
+    <p><b>Test the web server: </b></p>
+    <ol>
+ <li class="MsoListParagraph"> To test the web server, browse to: http://&lt;FMS_Server&gt;/index.html. If you're testing locally, you can use the URL http://localhost/index.html.
+    </li>
+    <li class="MsoListParagraph">If the Start Screen does not display in the browser, verify that port 80 is open. </li>
+    <li class="MsoListParagraph">Open the conf/fms.ini configuration file.The ADAPTOR.HOSTPORT parameter should be set as follows: ADAPTOR.HOSTPORT = :1935,80</li>
+    <li class="MsoListParagraph">If you edited the fms.ini file, restart Flash Media Server and retest the web server.</li>
+  </ol>
+  <p>&nbsp;</p>
+<p><b><u>KNOWN ISSUES</u></b><u>:</u></p>
+  <table border="1" cellspacing="0" cellpadding="0">
+    <tbody><tr>
+      <td width="296" valign="top"><p style="line-height:
+  normal"><b>ISSUE</b></p></td>
+      <td width="319" valign="top"><p style="line-height:
+  normal"><b>Details</b></p></td>
+    </tr>
+    <tr>
+      <td width="296" valign="top"><p style="line-height:
+  normal">Active recordings can not be delivered</p></td>
+      <td width="319" valign="top"><p style="line-height:
+  normal">Media being recorded can not be delivered via HTTP until video
+        recording has completed.</p></td>
+    </tr>
+    <tr>
+      <td width="296" valign="top"><p style="line-height:
+  normal">Media delivered via HTTP progressive download cannot be appended</p></td>
+      <td width="319" valign="top"><p style="line-height:
+  normal">Existing files that are being accessed via HTTP will be locked, and
+          can not be added to until all HTTP sessions have completed.&nbsp; It’s best not to
+          make recordings available until after the recording is complete.</p></td>
+    </tr>
+  </tbody></table>
+</div>
+
+
+</body></html>

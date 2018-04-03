@@ -1,0 +1,22 @@
+<?php $pages = $this->data->getPages(); ?>
+
+<?php  //if($pages->pageCount > 1) : ?>
+    <div class="paginator-container">
+        <span><?php echo $pages->totalItemCount; ?> items</span>
+        <ul>
+            <?php /*  if ($pages->first < $pages->current) : ?>
+                <li class="previous"><?php echo $this->data->getLink($this->urlparams, ($pages->current - 1), 'previous', $this->name); ?></li>
+            <?php else : ?>
+                <li class="previous"><a href="javascript:void(0);">previous</a></li>
+            <?php endif; */ ?>
+            <?php  foreach($pages->pagesInRange as $page) : ?>
+                <li<?php if ($page == $pages->current): ?> class="selected"<?php endif; ?>><a href="<?php echo $this->url(array('page' => $page)); ?>"><?php echo $page; ?></a></li>
+            <?php endforeach; ?>
+            <?php /* if ($pages->last > $pages->current) : ?>
+                <li class="next"><?php echo $this->data->getLink($this->urlparams, ($pages->current + 1), 'next', $this->name); ?></li>
+            <?php else : ?>
+                <li class="next"><a href="javascript:void(0);">next</a></li>
+            <?php endif; */ ?>
+        </ul>
+    </div>
+<?php //endif; ?>

@@ -1,0 +1,89 @@
+<?php $broadcastingUsers = (array)$this->data['broadcastingUsers']->getItemsByPage($this->data['broadcastingUsers']->getCurrentPageNumber()); ?>
+<?php $broadcastingTopUsers = (array)$this->data['broadcastingTopUsers']->getItemsByPage(1); ?>
+
+<table cellspacing="0" cellpadding="0" width="100%">
+    <tr>
+        <td width="180" valign="top">
+            <div class="header-03">categories</div>
+            <div class="block-container-01 categories-container">
+                <ul>
+                    <?php foreach($this->data['categories'] as $category) : ?>
+                        <li><a href="<?php echo $this->url(array('controller' => 'index', 'action' => 'category', 'id' => $category->id), null, true)?>"><?php echo $category->description; ?><span><?php echo $category->broadcastingUsers; ?> cams</span></a></li>
+                    <?php endforeach; ?>
+                </ul>
+            </div>
+            <div class="header-02">top categories</div>
+            <div class="block-container-01 categories-container">
+                <ul>
+                    <li><a href="#">Anal Sex<span>10 cams</span></a></li>
+                    <li><a href="#">Asian<span>10 cams</span></a></li>
+                    <li><a href="#">Babes<span>10 cams</span></a></li>
+                    <li><a href="#">BBW<span>10 cams</span></a></li>
+                    <li><a href="#">Big Tits<span>10 cams</span></a></li>
+                    <li><a href="#">Huge Tits<span>10 cams</span></a></li>
+                    <li><a href="#">Latina<span>10 cams</span></a></li>
+                    <li><a href="#">Leather<span>10 cams</span></a></li>
+                    <li><a href="#">Lesbian<span>10 cams</span></a></li>
+                    <li><a href="#">Mature<span>10 cams</span></a></li>
+                </ul>
+            </div>
+        </td>
+        <td width="560" valign="top">
+            <?php $modelsCount = count($broadcastingUsers); $i = 0; ?>
+            <div class="header-01"><?php echo $this->data['broadcastingUsers']->getTotalItemCount(); ?> new models online</div>
+            <?php echo $this->partial('common/paginator.phtml', array('data' => $this->data['broadcastingUsers'], 'urlparams' => $this->system['urlParams'])); ?>
+            <div class="block-container-02 snapshot-container">
+                <?php while($i < $modelsCount) : ?>
+                    <div class="snapshot-line">
+                        <?php for($i = $i, $j = $i + 3; $i < $j; $i++) : ?>
+                            <?php if(!empty($broadcastingUsers[$i])) : ?>
+                                <div class="snapshot">
+                                    <div class="snapshot-image">
+                                        <img src="/public/resources/images/<?php echo $broadcastingUsers[$i]['nick']; ?>/thumbnail/<?php echo $broadcastingUsers[$i]['filename']; ?>" alt="" />
+                                        <div class="icon-live"></div>
+                                        <div class="icon-new"></div>
+                                        <div class="info">
+                                            <a href="<?php echo $this->url(array('controller' => 'show', 'action' => 'public', 'nick' => $broadcastingUsers[$i]['nick']), null, true); ?>"><span><?php echo $broadcastingUsers[$i]['nick']; ?></span></a>
+                                            <ul class="languages">
+                                                <li><div class="lang-it"></div></li>
+                                                <li><div class="lang-pl"></div></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            <?php endif; ?>
+                        <?php endfor; ?>
+                    </div>
+                <?php endwhile; ?>
+            </div>
+            <?php echo $this->partial('common/paginator.phtml', array('data' => $this->data['broadcastingUsers'], 'urlparams' => $this->system['urlParams'])); ?>
+        </td>
+        <td width="200" valign="top">
+            <div class="header-03">top models</div>
+            <div class="block-container-01 snapshot-container">                
+                <?php for($i = 0; $i < 5; $i++) : ?>
+                    <?php if(!empty($broadcastingTopUsers[$i])) : ?>
+                        <div class="snapshot-line">
+                            <div class="snapshot">
+                                <div class="snapshot-image">
+                                    <img src="/public/resources/images/<?php echo $broadcastingTopUsers[$i]['nick']; ?>/thumbnail/<?php echo $broadcastingTopUsers[$i]['filename']; ?>" alt="" />
+                                    <div class="icon-live"></div>
+                                    <?php if($broadcastingTopUsers[$i]['is_new']) : ?>
+                                        <div class="icon-new"></div>
+                                    <?php endif; ?>
+                                    <div class="info">
+                                        <a href="<?php echo $this->url(array('controller' => 'show', 'action' => 'public', 'nick' => $broadcastingTopUsers[$i]['nick']), null, true); ?>"><span><?php echo $broadcastingTopUsers[$i]['nick'] ?></span></a>
+                                        <ul class="languages">
+                                            <li><div class="lang-it"></div></li>
+                                            <li><div class="lang-pl"></div></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <?php endif; ?>
+                <?php endfor; ?>
+            </div>
+        </td>
+    </tr>
+</table>

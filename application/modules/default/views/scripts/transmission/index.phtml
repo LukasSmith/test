@@ -1,0 +1,134 @@
+<table cellspacing="0" cellpadding="0" width="100%">
+    <tr>
+        <td width="340" valign="top">
+            <div class="header-01">live cam (viewers: <span class="viewers">0</span>)</div>
+            <div class="block-container-01 publisher-container">
+                <div id="publisher"></div>
+            </div>
+            <div class="header-01 private-requests-header">private requests <input type="image" src="/public/images/buttons/009.gif" onclick="objTransmissionHandler.setPublicRequest();" /></div>
+            <div class="block-container-02 private-requests-container">
+                <div class="requests"></div>
+            </div>
+            <div class="header-01 group-requests-header">group requests <input type="image" src="/public/images/buttons/010.gif" onclick="objTransmissionHandler.setGroupRequest();" /><input type="image" src="/public/images/buttons/009.gif" onclick="objTransmissionHandler.setPublicRequest();" /></div>
+            <div class="block-container-02 group-requests-container">
+                <div class="requests"></div>
+            </div>
+            <div class="header-01 tips-header">tips</div>
+            <div class="block-container-02 tips-container">
+                <div class="tips"></div>
+            </div>
+        </td>
+        <td width="600" valign="top">
+            <div class="header-03">text chat</div>
+            <div class="block-container-02 publisher-chat-container">
+                <div class="messages"></div>
+                <div class="message form-02">
+                    <div class="field">
+                        <div class="input">
+                            <input type="text" name="message" onkeydown="if(event.keyCode == 13){objTransmissionHandler.addMessageRequest();}" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header-03 status-header">status <input type="image" src="/public/images/buttons/011.gif" onclick="objTransmissionHandler.setStatusRequest();" /></div>
+            <div class="block-container-02 form-02 status-container">
+                <div class="field">
+                    <div class="input status">
+                        <input type="text" name="message" />
+                    </div>
+                </div>
+            </div>
+            <div class="header-03 private-settings-header">private show settings<input type="image" src="/public/images/buttons/004.gif" onclick="objTransmissionHandler.enablePrivateRequest();" /><input type="image" src="/public/images/buttons/005.gif" onclick="objTransmissionHandler.disablePrivateRequest();" /></div>
+            <div class="block-container-01 private-settings-container form-02">
+                <div class="field">
+                    <label>Duration (minutes):</label>
+                    <div class="input duration">
+                        <input type="text" name="duration" />
+                    </div>
+                </div>
+                <div class="field">
+                    <label>Credits:</label>
+                    <div class="input credits">
+                        <input type="text" name="credits" />
+                    </div>
+                </div>
+                <div class="field">
+                    <label>Description:</label>
+                    <div class="input description">
+                        <input type="text" name="description" />
+                    </div>
+                </div>
+            </div>
+            <div class="header-03 group-settings-header">group show settings<input type="image" src="/public/images/buttons/004.gif" onclick="objTransmissionHandler.enableGroupRequest();" /><input type="image" src="/public/images/buttons/005.gif" onclick="objTransmissionHandler.disableGroupRequest();" /></div>
+            <div class="block-container-01 group-settings-container form-02">
+                <div class="field">
+                    <label>Duration (minutes):</label>
+                    <div class="input duration">
+                        <input type="text" name="duration" />
+                    </div>
+                </div>
+                <div class="field">
+                    <label>Credits:</label>
+                    <div class="input credits">
+                        <input type="text" name="credits" />
+                    </div>
+                </div>
+                <div class="field">
+                    <label>Description:</label>
+                    <div class="input description">
+                        <input type="text" name="description" />
+                    </div>
+                </div>
+            </div>
+        </td>
+    </tr>
+</table>
+
+<script type="text/javascript">
+    
+    var flashvars = {
+        streamquality: "STD",
+        streamurl: "rtmp://37.59.5.5/live",
+        streamid: "098f6bcd4621d373cade4e832627b4f6"
+    };
+    
+    var params = {
+        menu: true,
+        play: true,
+        loop: true,
+        wmode: "window",
+        quality: "high",
+        scale: "showall",
+        devicefont: false,
+        bgcolor: "#000000",
+        allowScriptAccess: "sameDomain"
+    };
+    
+    var attributes = {
+        id: "publisher",
+        name: "publisher"
+    };
+
+    swfobject.embedSWF("/public/flash/publisher/publisher.swf", "publisher", "320", "240", "10.0.0", "/public/flash/install.swf", flashvars, params, attributes);
+    
+    var objTransmissionHandler = new transmissionHandler();
+    objTransmissionHandler.getTransmissionRequest();
+    setInterval('objTransmissionHandler.getTransmissionRequest()', 3000);
+    
+    function getTransmissionSettings(){       
+        var groupSettingsContainer = $('.group-settings-container');
+        var privateSettingsContainer = $('.private-settings-container');
+        
+        return {
+            groupCredits : groupSettingsContainer.find('.credits input').val(),
+            groupDuration : groupSettingsContainer.find('.duration input').val(),
+            groupDescription : groupSettingsContainer.find('.description input').val(),
+            groupEnabled : groupSettingsContainer.find('.enabled input').prop('checked'),
+            privateCredits : privateSettingsContainer.find('.credits input').val(),
+            privateDuration : privateSettingsContainer.find('.duration input').val(),
+            privateDescription : privateSettingsContainer.find('.description input').val(),
+            privateEnabled : privateSettingsContainer.find('.enabled input').prop('checked')
+        };
+    }
+    
+</script>

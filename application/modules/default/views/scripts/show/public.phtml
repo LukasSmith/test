@@ -1,0 +1,92 @@
+<div class="show-requests-container">
+    <table cellspacing="0" cellpadding="0" width="100%">
+        <tr>
+            <td class="tip">
+                <a href="javascript:void(0);" onclick="objShowHandler.addTipRequest();"><b>give a tip</b></a>
+            </td>
+            <td class="group inactive" width="35%">
+                <a href="javascript:void(0);" onclick="objShowHandler.addGroupRequest();">
+                    <b>join group show</b>
+                    <div class="enabled"><span class="duration">5</span> min / <span class="credits">10</span> credits to join</div>
+                    <div class="disabled">group show is not available</div>
+                </a>
+            </td>
+            <td class="private inactive" width="35%">
+                <a href="javascript:void(0);" onclick="objShowHandler.addPrivateRequest();">
+                    <b>start private show</b>
+                    <div class="enabled"><span class="duration">10</span> min / <span class="credits">100</span> credits</span></div>
+                    <div class="disabled">private show is not available</div>
+                </a>
+            </td>
+        </tr>
+    </table>    
+</div>    
+<table cellspacing="0" cellpadding="0" width="100%">
+    <tr>
+        <td width="560" valign="top">
+            <div class="header-01">live cam</div>
+            <div class="block-container-01 player-container">
+                <div id="player"></div>
+            </div>
+        </td>
+        <td width="380" valign="top">
+            <div class="header-03">text chat</div>
+            <div class="block-container-02 player-chat-container">
+                <div class="messages"></div>
+                <div class="message form-02">
+                    <div class="field">
+                        <div class="input">
+                            <input type="text" name="message" onkeydown="if(event.keyCode == 13){objShowHandler.addMessageRequest();}" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <div class="show-status">
+                <div class="header-01 show-status-header">status</div>
+                <div class="block-container-03 show-status-container"></div>
+            </div>
+            <div class="show-private">
+                <div class="header-01 show-private-description-header">private show description</div>
+                <div class="block-container-02 show-private-description-container"></div>
+            </div>
+            <div class="show-group">
+                <div class="header-01 show-group-description-header">group show description</div>
+                <div class="block-container-02 show-group-description-container"></div>
+                <div class="header-01 show-group-requests-header">group show requests<span class="credits">0 / 0</span></div>
+                <div class="block-container-02 show-group-requests-container">
+                    <div class="requests"></div>
+                </div>
+            </div>
+            <div class="header-01 show-tips-header">tips</div>
+            <div class="block-container-02 show-tips-container">
+                <div class="tips"></div>
+            </div>
+        </td>
+    </tr>
+</table>
+
+<script type="text/javascript">
+    
+    var params = {
+        quality : "high",
+        bgcolor : "#000000",
+        allowScriptAccess : "sameDomain"
+    };
+
+    var flashvars = {
+        stream : "<?php echo $this->data['show']['code']; ?>"
+    };
+    
+    swfobject.embedSWF("/public/flash/player/player.swf", "player", "540", "405", "11.2.0", "/Public/Flash/Install.swf", flashvars, params);
+
+    //var nick = '<?php echo $this->data['user']['nick']; ?>';
+    var objShowHandler = new showHandler('<?php echo $this->data['user']['nick']; ?>');
+    
+    objShowHandler.getShowRequest();
+    setInterval('objShowHandler.getShowRequest()', 3000);
+
+</script>

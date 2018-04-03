@@ -1,0 +1,29 @@
+<div class="header-01">categories</div>
+<div class="block-container-02">
+    <form action="<?php echo $this->url(); ?>" method="post" class="form-02">
+        <table cellspacing="0" cellpadding="0" width="100%" class="table-01">
+            <tr>
+                <th colspan="6">Select categories:</th>
+            </tr>
+            <?php $categoriesCount = count($this->data['categories']); $i = 0; ?>
+            <?php if($categoriesCount > 0) : ?>
+                <?php while($i < $categoriesCount) : ?>
+                    <tr>
+                        <?php for($i = $i, $j = $i + 3; $i < $j; $i++) : ?>
+                            <?php if(!empty($this->data['categories'][$i])) : ?>
+                                <td width="1%"><input type="checkbox" name="categories[]" value="<?php echo $this->data['categories'][$i]['id']; ?>" <?php if(!empty($this->data['categories'][$i]['id_users_categories'])) : ?>checked="checked"<?php endif; ?> /></td>
+                                <td width="32%"><?php echo $this->data['categories'][$i]['description']; ?></td>
+                            <?php else : ?>
+                                <td width="1%">&nbsp;</td>
+                                <td width="32%">&nbsp;</td>
+                            <?php endif; ?>
+                        <?php endfor; ?>
+                    </tr>
+                <?php endwhile; ?>
+            <?php endif; ?>
+        </table>
+        <div class="submit">
+            <input type="image" src="/public/images/buttons/002.gif" />
+        </div>
+    </form>
+</div>

@@ -1,0 +1,85 @@
+<table cellspacing="0" cellpadding="0" width="100%">
+    <tr>
+        <td width="220" valign="top">
+            <div class="header-03">categories</div>
+            <div class="block-container-01 categories-container">
+                <ul>
+                    <?php foreach($this->data['categories'] as $category) : ?>
+                        <li><a href="<?php echo $this->url(array('controller' => 'index', 'action' => 'category', 'id' => $category->id), null, true)?>"><?php echo $category->description; ?><span><?php echo $category->broadcastingUsers; ?> cams</span></a></li>
+                    <?php endforeach; ?>
+                </ul>
+            </div>
+            <div class="header-02">top categories</div>
+            <div class="block-container-01 categories-container">
+                <ul>
+                    <li><a href="#">Anal Sex<span>10 cams</span></a></li>
+                    <li><a href="#">Asian<span>10 cams</span></a></li>
+                    <li><a href="#">Babes<span>10 cams</span></a></li>
+                    <li><a href="#">BBW<span>10 cams</span></a></li>
+                    <li><a href="#">Big Tits<span>10 cams</span></a></li>
+                    <li><a href="#">Huge Tits<span>10 cams</span></a></li>
+                    <li><a href="#">Latina<span>10 cams</span></a></li>
+                    <li><a href="#">Leather<span>10 cams</span></a></li>
+                    <li><a href="#">Lesbian<span>10 cams</span></a></li>
+                    <li><a href="#">Mature<span>10 cams</span></a></li>
+                </ul>
+            </div>
+        </td>
+        <td width="520" valign="top">
+            <div class="header-01">register</div>
+            <div class="block-container-02">
+                <form action="<?php echo $this->url(); ?>" method="post" class="form-02">
+                    <div class="field">
+                        <label>Username:</label>
+                        <?php echo $this->forms['register']->getItem('username'); ?>
+                    </div>
+                    <div class="field">
+                        <label>E-mail:</label>
+                        <?php echo $this->forms['register']->getItem('email'); ?>
+                    </div>
+                    <div class="field">
+                        <label>Confirm E-mail:</label>
+                        <?php echo $this->forms['register']->getItem('confirm_email'); ?>
+                    </div>
+                    <div class="field">
+                        <label>Password:</label>
+                        <?php echo $this->forms['register']->getItem('password'); ?>
+                    </div>
+                    <div class="field">
+                        <label>Confirm Password:</label>
+                        <?php echo $this->forms['register']->getItem('confirm_password'); ?>
+                    </div>
+                    <div class="submit">
+                        <span>By creating an account I accept the <a href="#"><u>user agreement</u></a> and <a href="#"><u>privacy policy</u></a></span>
+                        <input type="image" src="/public/images/buttons/002.gif" />
+                    </div>
+                </form>
+            </div>
+        </td>
+        <td width="200" valign="top">
+            <div class="header-03">top models</div>
+            <div class="block-container-01 snapshot-container">                
+                <?php for($i = 0; $i < 5; $i++) : ?>
+                    <?php if(!empty($broadcastingTopUsers[$i])) : ?>
+                        <div class="snapshot-line">
+                            <div class="snapshot">
+                                <div class="snapshot-image">
+                                    <img src="/public/resources/images/<?php echo $broadcastingTopUsers[$i]['nick']; ?>/thumbnail/<?php echo $broadcastingTopUsers[$i]['filename']; ?>" alt="" />
+                                    <div class="icon-live"></div>
+                                    <div class="icon-new"></div>
+                                    <div class="info">
+                                        <a href="<?php echo $this->url(array('controller' => 'show', 'action' => 'public', 'nick' => $broadcastingTopUsers[$i]['nick']), null, true); ?>"><span><?php echo $broadcastingTopUsers[$i]['nick'] ?></span></a>
+                                        <ul class="languages">
+                                            <li><div class="lang-it"></div></li>
+                                            <li><div class="lang-pl"></div></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <?php endif; ?>
+                <?php endfor; ?>
+            </div>
+        </td>
+    </tr>
+</table>

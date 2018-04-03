@@ -1,0 +1,28 @@
+<?php $transactions = (array)$this->data['transactions']->getItemsByPage($this->data['transactions']->getCurrentPageNumber()); ?>
+<div class="header-01">payments history</div>
+<?php echo $this->partial('common/paginator.phtml', array('data' => $this->data['transactions'], 'urlparams' => $this->system['urlParams'])); ?>
+<div class="block-container-02">
+    <table cellspacing="0" cellpadding="0" width="100%" class="table-01">
+        <tr>
+            <th>Date:</th>
+            <th>Credits:</th>
+            <th>Balance before:</th>
+            <th>Balance after:</th>
+            <th>Transaction type:</th>
+            <th>Transaction sort:</th>
+            <th>Transaction status:</th>
+        </tr>
+        <?php foreach($this->data['transactions'] as $transaction) : ?>
+            <tr>
+                <td><?php echo date('Y-m-d H:i', strtotime($transaction['added'])); ?></td>
+                <td><?php echo $transaction['credits']; ?></td>
+                <td><?php echo $transaction['balance_before']; ?></td>
+                <td><?php echo $transaction['balance_after']; ?></td>
+                <td><?php echo $transaction['type']; ?></td>
+                <td><?php echo $transaction['sort']; ?></td>
+                <td><?php echo $transaction['status']; ?></td>
+            </tr>
+        <?php endforeach; ?>
+    </table>
+</div>
+<?php echo $this->partial('common/paginator.phtml', array('data' => $this->data['transactions'], 'urlparams' => $this->system['urlParams'])); ?>

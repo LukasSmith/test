@@ -1,0 +1,49 @@
+<div class="header-01">gallery</div>
+<div class="block-container-01 gallery-container">
+    <?php $imagesCount = count($this->data['images']); $i = 0; ?>
+    <?php if($imagesCount > 0) : ?>
+        <?php while($i < $imagesCount) : ?>
+            <div class="gallery-line">
+                <?php for($i = $i, $j = $i + 5; $i < $j; $i++) : ?>
+                    <?php if(!empty($this->data['images'][$i])) : ?>
+                        <div class="gallery-item<?php if($this->data['images'][$i]['is_main_image']) : ?> gallery-main-item<?php endif; ?>">
+                            <div class="gallery-image">
+                                <img src="/public/resources/images/<?php echo $this->system['userData']['nick']; ?>/thumbnail/<?php echo $this->data['images'][$i]['filename']; ?>" alt="" />
+                                <div class="info">
+                                    <a href="<?php echo $this->url(array('controller' => 'account', 'action' => 'gallery', 'mainimage' => $this->data['images'][$i]['filename']), null, true)?>">main image</a> / 
+                                    <a href="<?php echo $this->url(array('controller' => 'account', 'action' => 'gallery', 'delete' => $this->data['images'][$i]['filename']), null, true)?>">delete</a>
+                                </div>
+                            </div>
+                        </div>
+                    <?php endif; ?>
+                <?php endfor; ?>
+            </div>
+        <?php endwhile; ?>
+    <?php endif; ?>
+</div>
+<div class="header-01">add image</div>
+<div class="block-container-01 gallery-container">
+    <div id="uploader"></div>
+</div>
+                    
+<script type="text/javascript">
+    
+    var params = {
+        menu: true,
+        play: true,
+        loop: true,
+        wmode: "transparent",
+        quality: "high",
+        scale: "showall",
+        devicefont: true,
+        allowScriptAccess: "always"
+    };
+    
+    var attributes = {
+        id: "show-publisher-swf",
+        name: "show-publisher-swf"
+    };
+
+    swfobject.embedSWF("/public/flash/imageUploader/imageUploader.swf", "uploader", "406", "25", "10.0.0", "/public/flash/install.swf", {}, params, attributes);
+    
+</script>
